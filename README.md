@@ -51,11 +51,40 @@ portfolio/
 
 ## 기능
 
-- 🎨 모던한 macOS 스타일 UI
+- 🎨 모던한 Apple 스타일 UI 디자인 시스템
 - 🚀 빠른 페이지 로딩 (Next.js SSR)
 - 📱 반응형 디자인
-- ✨ 부드러운 애니메이션
+- ✨ 부드러운 애니메이션 (Framer Motion)
 - 📧 이메일 연락 기능
+- 🎬 주요 기능 데모 영상 팝업
+- 💼 프로젝트 상세 보기
+- 🎯 기술 스택 로고 표시
+
+## 배포
+
+### Vercel로 배포하기
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/kimchiro/silver-fishstick.git)
+
+또는 수동으로:
+
+1. [Vercel](https://vercel.com)에 로그인
+2. "New Project" 클릭
+3. GitHub 저장소 `kimchiro/silver-fishstick` 선택
+4. 자동으로 설정이 감지되고 배포 시작
+5. 배포 완료 후 도메인 확인: `kimchiro-portfolio.cloud`
+
+### 환경 변수 (선택사항)
+
+배포 시 필요한 환경 변수가 있다면 Vercel 대시보드에서 설정:
+
+```
+NEXT_PUBLIC_SITE_URL=https://kimchiro-portfolio.cloud
+```
+
+## GitHub 저장소
+
+🔗 **Repository**: [https://github.com/kimchiro/silver-fishstick.git](https://github.com/kimchiro/silver-fishstick.git)
 
 ## 라이선스
 
