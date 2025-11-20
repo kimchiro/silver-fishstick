@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   fullDescription: string;
   image: string;
+  images?: string[]; // 슬라이드용 이미지 배열
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
@@ -19,7 +20,13 @@ export const projects: Project[] = [
     title: "메일트리 온라인손편지 우편대행서비스",
     description: "온라인 손편지·우편대행 서비스",
     fullDescription: "온라인에서 손편지를 작성하고 실제 우체국을 통해 발송할 수 있는 온라인 손편지·우편대행 서비스입니다. 사용자는 편지 작성, 사진 첨부, 봉투·엽서 선택, 결제 기능을 이용해 간편하게 편지를 주문할 수 있으며, 마이페이지에서 주문 내역과 배송 상태를 조회할 수 있습니다.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "/images/mailtree/mailtree-main.png",
+    images: [
+      "/images/mailtree/mailtree-main.png",
+      "/images/mailtree/mailtree-letter.png",
+      "/images/mailtree/mailtree-product.png",
+      "/images/mailtree/mailtree-appstore.png"
+    ],
     technologies: ["React", "React Native", "Node.js", "Axios", "MySQL", "Express", "Emotion", "TypeScript", "Next.js", "Docker", "AWS", "Nest.JS", "GitHub"],
     liveUrl: "https://mailtree.co.kr/",
     githubUrl: "https://github.com/MailMovers",
