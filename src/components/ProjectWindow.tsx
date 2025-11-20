@@ -132,7 +132,7 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
         {/* Window Content */}
         <div className="overflow-y-auto max-h-[calc(92vh-56px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           {/* Hero Image Slider */}
-          <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 group">
+          <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 group">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentImageIndex}
@@ -140,12 +140,12 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -300 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-full"
+                className="w-full h-full flex items-center justify-center"
               >
                 <ImageWithFallback
                   src={projectImages[currentImageIndex]}
                   alt={`${project.title} - ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </motion.div>
             </AnimatePresence>
