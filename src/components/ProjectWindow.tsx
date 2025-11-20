@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { X, Minus, Maximize2, ExternalLink, Github, Calendar, User, Briefcase, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Minus, Maximize2, ExternalLink, Github, Calendar, User, Briefcase, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Project } from "@/data/projects";
@@ -57,10 +57,6 @@ const getTechIcon = (tech: string) => {
 
 export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
   const [selectedFeatureIndex, setSelectedFeatureIndex] = useState<number | null>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // 이미지 배열 (있으면 사용, 없으면 기본 이미지 하나만)
-  const projectImages = project.images || [project.image];
   
   // 임시 데모 영상 URL (YouTube)
   const demoVideos = [
@@ -71,14 +67,6 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
     "https://www.youtube.com/embed/y6120QOlsfU",
     "https://www.youtube.com/embed/2Vv-BfVoq4g"
   ];
-  
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
-  };
-  
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
-  };
   
   return (
     <motion.div
@@ -131,62 +119,13 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
 
         {/* Window Content */}
         <div className="overflow-y-auto max-h-[calc(92vh-56px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-          {/* Hero Image Slider */}
-          <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 group">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={currentImageIndex}
-                initial={{ opacity: 0, x: 300 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -300 }}
-                transition={{ duration: 0.3 }}
-                className="w-full h-full"
-              >
-                <ImageWithFallback
-                  src={projectImages[currentImageIndex]}
-                  alt={`${project.title} - ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Navigation Arrows - Only show if multiple images */}
-            {projectImages.length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200"
-                >
-                  <ChevronLeft className="w-6 h-6 text-gray-800" />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200"
-                >
-                  <ChevronRight className="w-6 h-6 text-gray-800" />
-                </button>
-
-                {/* Dots Indicator */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {projectImages.map((_: string, index: number) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                        index === currentImageIndex
-                          ? 'bg-white w-6'
-                          : 'bg-white/50 hover:bg-white/75'
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                {/* Image Counter */}
-                <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm text-white text-sm font-medium">
-                  {currentImageIndex + 1} / {projectImages.length}
-                </div>
-              </>
-            )}
+          {/* Hero Image */}
+          <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
+            <ImageWithFallback
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="p-10 space-y-10">
