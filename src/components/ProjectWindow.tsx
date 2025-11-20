@@ -4,6 +4,7 @@ import { useState } from "react";
 import { X, Minus, Maximize2, ExternalLink, Github, Calendar, User, Briefcase, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Project } from "@/data/projects";
 import { 
   SiReact, 
   SiNodedotjs, 
@@ -21,21 +22,6 @@ import {
   SiFigma,
   SiOpenai
 } from "react-icons/si";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl: string;
-  githubUrl: string;
-  fullDescription: string;
-  period: string;
-  role: string;
-  responsibilities: string[];
-  features: string[];
-}
 
 interface ProjectWindowProps {
   project: Project;
@@ -182,7 +168,7 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
 
                 {/* Dots Indicator */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {projectImages.map((_, index) => (
+                  {projectImages.map((_: string, index: number) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
