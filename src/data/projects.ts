@@ -10,6 +10,7 @@ export interface Project {
   githubUrl: string;
   period: string;
   role: string;
+  projectType: string;
   responsibilities: string[];
   features: string[];
 }
@@ -31,8 +32,9 @@ export const projects: Project[] = [
     technologies: ["React", "React Native", "Node.js", "Axios", "MySQL", "Express", "Emotion", "TypeScript", "Next.js", "Docker", "AWS", "Nest.JS", "GitHub"],
     liveUrl: "https://mailtree.co.kr/",
     githubUrl: "https://github.com/MailMovers",
-    period: "2023.09 - 2024.01 (1년4개월)",
-    role: "풀스택 개발자",
+    period: "2023.09 - 2025.01 (1년4개월)",
+    role: "풀스택 개발자, 기획자",
+    projectType: "B2C",
     responsibilities: [
       "Frontend: 편지쓰기·결제·상품·메인 UI 개발",
       "Frontend: 서비스 UX 구조 개선",
@@ -40,7 +42,7 @@ export const projects: Project[] = [
       "Backend: ERD 기반 DB 구조 설계",
       "활용기술 - Frontend: React, TypeScript, Emotion",
       "활용기술 - Backend: Node.js, Express, MySQL",
-      "활용기술 - 기타: Figma, BDDiagram,",
+      "활용기술 - 기타: Figma, DBDiagram, GitHub",
       "성과: 앱스토어·플레이스토어 1년 이상 안정적 운영",
       "성과: 총 회원 737명 / 최근 30일 가입자 60명",
       "성과: 최근 30일 매출 1,603,896원"
@@ -59,12 +61,13 @@ export const projects: Project[] = [
     title: "천태사 사찰공식 홈페이지",
     description: "사찰 정보 및 법회 일정 안내 웹사이트",
     fullDescription: "천태사 소개, 법회 일정, 갤러리, 공지사항을 온라인에서 확인할 수 있는 공식 웹사이트입니다. 사찰 정보 제공, 사진·소식 업데이트, 모바일 접근성 향상 등 사용자 중심의 구조로 제작되었으며 관리자가 손쉽게 콘텐츠를 등록·관리할 수 있도록 갤러리 및 주요 소식 API를 구축했습니다.",
-    image: "https://images.unsplash.com/photo-1528642474498-1af0c17fd8c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "/images/cheontaesa/cheontaesa.png",
     technologies: ["Next.js", "React", "TypeScript", "Styled-Components", "Tailwind CSS", "PostgreSQL", "Supabase", "AWS", "Nest.JS", "GitHub"],
     liveUrl: "https://www.cheontaesa.com/",
     githubUrl: "https://github.com/chowalcamp",
     period: "2024.03 - 2024.05 (3개월)",
     role: "풀스택 개발자",
+    projectType: "B2C",
     responsibilities: [
       "Next.js 기반 서버 사이드 렌더링 웹사이트 구축",
       "Supabase와 PostgreSQL을 활용한 데이터베이스 설계",
@@ -92,6 +95,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/devDingco/dobby",
     period: "2024.06 - 2024.08 (3개월)",
     role: "프론트엔드 개발자 & UX/UI 디자이너",
+    projectType: "B2C",
     responsibilities: [
       "Figma를 활용한 서비스 UX/UI 프로토타입 설계",
       "Next.js 기반 프론트엔드 개발",
@@ -119,6 +123,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/devDingco/dobby",
     period: "2024.06 - 2024.08 (3개월)",
     role: "프론트엔드 개발자",
+    projectType: "B2C",
     responsibilities: [
       "Next.js 기반 웹 애플리케이션 개발",
       "블로그 플래너 UI/UX 구현",
@@ -146,6 +151,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/bakkullae",
     period: "2024.09 - 2024.11 (3개월)",
     role: "풀스택 개발자",
+    projectType: "B2C",
     responsibilities: [
       "React/Next.js 기반 프론트엔드 개발",
       "NestJS 백엔드 API 설계 및 구현",

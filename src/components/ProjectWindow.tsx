@@ -120,7 +120,7 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
         {/* Window Content */}
         <div className="overflow-y-auto max-h-[calc(92vh-56px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           {/* Hero Image */}
-          <div className="aspect-[4/1] w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
+          <div className="aspect-[4/4] w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200 rounded-t-2xl">
             <ImageWithFallback
               src={project.image}
               alt={project.title}
@@ -192,7 +192,7 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-1.5">프로젝트 타입</div>
-                    <div className="font-semibold text-gray-900">{project.role}</div>
+                    <div className="font-semibold text-gray-900">{project.projectType}</div>
                   </div>
                 </div>
               </div>
