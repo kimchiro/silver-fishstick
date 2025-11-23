@@ -7,6 +7,7 @@ import { projects as projectsData } from "@/data/projects";
 interface DockProps {
   onProjectClick: (projectId: number) => void;
   onMailClick: () => void;
+  onRoadmapClick: () => void;
 }
 
 // projects.ts의 데이터를 Dock용으로 변환
@@ -30,15 +31,16 @@ const projects = projectsData.map((project, index) => {
 
 const systemApps = [
   { id: 99, icon: "📧", label: "Mail", gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
-  { id: 100, icon: "📁", label: "Finder", gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" }
+  { id: 100, icon: "🗺️", label: "Roadmap", gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" }
 ];
 
-export function Dock({ onProjectClick, onMailClick }: DockProps) {
+export function Dock({ onProjectClick, onMailClick, onRoadmapClick }: DockProps) {
   const handleSystemAppClick = (appId: number) => {
     if (appId === 99) {
       onMailClick();
+    } else if (appId === 100) {
+      onRoadmapClick();
     }
-    // Finder (100)는 아무 동작 안함
   };
 
   return (

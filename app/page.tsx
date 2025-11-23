@@ -5,6 +5,7 @@ import { MacMenuBar } from "@/components/MacMenuBar";
 import { Dock } from "@/components/Dock";
 import { ProjectWindow } from "@/components/ProjectWindow";
 import { MailWindow } from "@/components/MailWindow";
+import { RoadmapWindow } from "@/components/RoadmapWindow";
 import { AnimatePresence, motion } from "framer-motion";
 import { Toaster } from "@/components/ui/sonner";
 import { projects } from "@/data/projects";
@@ -12,6 +13,7 @@ import { projects } from "@/data/projects";
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isMailOpen, setIsMailOpen] = useState(false);
+  const [isRoadmapOpen, setIsRoadmapOpen] = useState(false);
 
   const handleProjectClick = (projectId: number) => {
     setSelectedProject(projectId);
@@ -19,6 +21,10 @@ export default function Home() {
 
   const handleMailClick = () => {
     setIsMailOpen(true);
+  };
+
+  const handleRoadmapClick = () => {
+    setIsRoadmapOpen(true);
   };
 
   const currentProject = projects.find(p => p.id === selectedProject);
@@ -83,7 +89,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <Dock onProjectClick={handleProjectClick} onMailClick={handleMailClick} />
+      <Dock onProjectClick={handleProjectClick} onMailClick={handleMailClick} onRoadmapClick={handleRoadmapClick} />
 
       <AnimatePresence>
         {currentProject && (
@@ -94,6 +100,9 @@ export default function Home() {
         )}
         {isMailOpen && (
           <MailWindow onClose={() => setIsMailOpen(false)} />
+        )}
+        {isRoadmapOpen && (
+          <RoadmapWindow onClose={() => setIsRoadmapOpen(false)} />
         )}
       </AnimatePresence>
 

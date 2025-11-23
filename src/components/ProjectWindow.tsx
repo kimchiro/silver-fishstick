@@ -120,7 +120,7 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
         {/* Window Content */}
         <div className="overflow-y-auto max-h-[calc(92vh-56px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           {/* Hero Image */}
-          <div className="aspect-[4/4] w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200 rounded-t-2xl">
+          <div className="aspect-[4/4] w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200">
             <ImageWithFallback
               src={project.image}
               alt={project.title}
