@@ -86,10 +86,10 @@ export const projects: Project[] = [
     id: 4,
     name: "천태사 사찰 홈페이지",
     type: "project",
-    startDate: "2024.03",
-    endDate: "2024.05",
-    startDay: 245, // 2023년 7~12월(184) + 2024년 1~2월(60) ≈ 244
-    totalDays: 92, // 3~5월 = 약 92일
+    startDate: "2025.01",
+    endDate: "2025.06",
+    startDay: 489, // 2023년 7~12월(184) + 2024년 1~2월(60) ≈ 244
+    totalDays: 182, // 2025.01~2025.06 = 약 182일
     role: "풀스택 개발자",
     phases: [
       { name: "기획", duration: 20, color: "#8B5CF6" },

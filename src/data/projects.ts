@@ -69,7 +69,7 @@ export const projects: Project[] = [
     liveUrl: "https://www.cheontaesa.com/",
     githubUrl: "https://github.com/chowalcamp",
     erdUrl: "https://dbdiagram.io/d/천태사-6927f464a0c4ebcc2befec32",
-    period: "2024.03 - 2024.06",
+    period: "2025.01 - 2025.06",
     role: "풀스택 개발자",
     projectType: "Corporate Site",
     responsibilities: [
