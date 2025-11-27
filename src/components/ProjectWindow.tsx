@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { X, Minus, Maximize2, ExternalLink, Github, Calendar, User, Briefcase, Play } from "lucide-react";
+import { X, Minus, Maximize2, ExternalLink, Github, Calendar, User, Briefcase, Play, Palette, Database } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Project } from "@/data/projects";
@@ -138,7 +138,7 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
             </div>
 
             {/* Action Buttons - Apple Style */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
               <a
                 href={project.liveUrl}
                 target="_blank"
@@ -152,11 +152,33 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium rounded-xl border border-gray-200/60 hover:border-gray-300/60 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 hover:bg-black text-white font-medium rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 <Github className="w-4 h-4" />
                 GitHub 저장소
               </a>
+              {project.designUrl && (
+                <a
+                  href={project.designUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <Palette className="w-4 h-4" />
+                  초기 디자인보기
+                </a>
+              )}
+              {project.erdUrl && (
+                <a
+                  href={project.erdUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <Database className="w-4 h-4" />
+                  ERD 보기
+                </a>
+              )}
             </div>
 
             {/* Quick Info Cards - Apple Style */}
@@ -302,17 +324,15 @@ export function ProjectWindow({ project, onClose }: ProjectWindowProps) {
               </div>
 
               {/* Video Content */}
-              <div className="aspect-video bg-black">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={demoVideos[selectedFeatureIndex % demoVideos.length]}
-                  title="Demo Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
+              <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                <div className="text-center space-y-4 p-8">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg">
+                    <Play className="w-10 h-10 text-white" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-800">Coming Soon</h4>
+                  <p className="text-gray-600 text-lg">준비중입니다</p>
+                  <p className="text-sm text-gray-500">곧 멋진 데모 영상으로 찾아뵙겠습니다</p>
+                </div>
               </div>
 
               {/* Video Footer */}

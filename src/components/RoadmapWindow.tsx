@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { X, Minus, Plus, FolderOpen, Calendar, ZoomIn, ZoomOut, Clock, Users, Briefcase } from "lucide-react";
+import { X, Minus, Plus, FolderOpen, ZoomIn, ZoomOut } from "lucide-react";
 import { useState } from "react";
 import { 
   projects, 
@@ -13,13 +13,23 @@ interface RoadmapWindowProps {
   onClose: () => void;
 }
 
+type YearFilter = '전체' | '2023' | '2024' | '2025';
+
 export function RoadmapWindow({ onClose }: RoadmapWindowProps) {
   const [zoom, setZoom] = useState(100);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [currentDay] = useState(853); // 현재 진행 상황 (마지막 프로젝트 시작점)
+  const [selectedYear, setSelectedYear] = useState<YearFilter>('전체');
 
   const handleZoomIn = () => setZoom(Math.min(zoom + 20, 200));
   const handleZoomOut = () => setZoom(Math.max(zoom - 20, 60));
+
+  // 연도별 프로젝트 필터링
+  const filteredProjects = projects.filter(project => {
+    if (selectedYear === '전체') return true;
+    const startYear = project.startDate.substring(0, 4);
+    return startYear === selectedYear;
+  });
 
   return (
     <motion.div
@@ -86,21 +96,32 @@ export function RoadmapWindow({ onClose }: RoadmapWindowProps) {
 
         {/* Toolbar */}
         <div className="bg-white/50 border-b border-gray-200/60 px-6 py-3 flex items-center justify-between flex-shrink-0">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50/80 border border-blue-200/60 rounded-lg backdrop-blur-sm">
-              <Calendar className="w-3.5 h-3.5 text-blue-600" />
-              <span className="text-xs font-semibold text-blue-700">타임라인</span>
-            </div>
-            <span className="text-xs text-gray-500 font-medium">2년 5개월간의 개발 여정</span>
+          {/* 연도 필터 - 좌측 */}
+          <div className="flex items-center gap-2">
+            {(['전체', '2023', '2024', '2025'] as YearFilter[]).map((year) => (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                  selectedYear === year
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {year}
+              </button>
+            ))}
           </div>
+
+          {/* 프로젝트/부트캠프 개수 - 우측 */}
           <div className="flex items-center gap-4 text-xs text-gray-600">
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-sm" />
-              <span className="font-medium">프로젝트 7개</span>
+              <span className="font-medium">프로젝트 {filteredProjects.filter(p => p.type === 'project').length}개</span>
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-sm" />
-              <span className="font-medium">부트캠프 5개</span>
+              <span className="font-medium">부트캠프 {filteredProjects.filter(p => p.type === 'bootcamp').length}개</span>
             </span>
           </div>
         </div>
@@ -132,7 +153,7 @@ export function RoadmapWindow({ onClose }: RoadmapWindowProps) {
 
             {/* Timeline Grid */}
             <div className="space-y-3">
-              {projects.map((project, projectIndex) => (
+              {filteredProjects.map((project, projectIndex) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, x: -50 }}

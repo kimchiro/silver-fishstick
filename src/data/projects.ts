@@ -8,6 +8,8 @@ export interface Project {
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
+  designUrl?: string; // 초기 디자인 URL (선택적)
+  erdUrl?: string; // ERD 다이어그램 URL (선택적)
   period: string;
   role: string;
   projectType: string;
@@ -32,6 +34,7 @@ export const projects: Project[] = [
     technologies: ["React", "React Native", "Node.js", "Axios", "MySQL", "Express", "Emotion", "TypeScript", "Next.js", "Docker", "AWS", "Nest.JS", "GitHub"],
     liveUrl: "https://mailtree.co.kr/",
     githubUrl: "https://github.com/MailMovers",
+    erdUrl: "https://dbdiagram.io/d/mail-tree-65080d7a02bd1c4a5ec3c478",
     period: "2023.09 - 2025.01 (1년4개월)",
     role: "풀스택 개발자, 기획자",
     projectType: "B2C",
@@ -62,15 +65,16 @@ export const projects: Project[] = [
     description: "사찰 정보 및 법회 일정 안내 웹사이트",
     fullDescription: "천태사 소개, 법회 일정, 갤러리, 공지사항을 온라인에서 확인할 수 있는 공식 웹사이트입니다. 사찰 정보 제공, 사진·소식 업데이트, 모바일 접근성 향상 등 사용자 중심의 구조로 제작되었으며 관리자가 손쉽게 콘텐츠를 등록·관리할 수 있도록 갤러리 및 주요 소식 API를 구축했습니다.",
     image: "/images/cheontaesa/cheontaesa-hero.png",
-    technologies: ["Next.js", "React", "TypeScript", "Styled-Components", "Tailwind CSS", "PostgreSQL", "Supabase", "AWS", "Nest.JS", "GitHub"],
+    technologies: ["Next.js", "React", "TypeScript", "Styled-Components", "Tailwind CSS", "PostgreSQL", "AWS", "Nest.JS", "GitHub"],
     liveUrl: "https://www.cheontaesa.com/",
     githubUrl: "https://github.com/chowalcamp",
-    period: "2024.03 - 2024.05 (3개월) 운영중",
+    erdUrl: "https://dbdiagram.io/d/천태사-6927f464a0c4ebcc2befec32",
+    period: "2024.03 - 2024.06",
     role: "풀스택 개발자",
     projectType: "Corporate Site",
     responsibilities: [
       "Next.js 기반 서버 사이드 렌더링 웹사이트 구축",
-      "Supabase와 PostgreSQL을 활용한 데이터베이스 설계",
+      "PostgreSQL을 활용한 데이터베이스 설계",
       "관리자 CMS 기능 개발 (갤러리, 공지사항 관리)",
       "반응형 디자인 및 모바일 최적화",
       "Nest.JS 기반 백엔드 API 개발"
@@ -98,6 +102,8 @@ export const projects: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Styled-Components", "Tailwind CSS", "PostgreSQL", "Supabase", "GitHub"],
     liveUrl: "https://production-dobby.vercel.app/generator",
     githubUrl: "https://github.com/devDingco/dobby",
+    designUrl: "https://reply-heaps-15554806.figma.site/",
+    erdUrl: "https://dbdiagram.io/d/blog-663cbc7d9e85a46d5569b9ae",
     period: "2025.10 - 2025.11 (1개월) 개발중",
     role: "풀스택 개발자, 기획, 디자인",
     projectType: "B2C",
@@ -105,11 +111,9 @@ export const projects: Project[] = [
       "Figma를 활용한 서비스 UX/UI 프로토타입 설계",
       "Next.js 기반 프론트엔드 개발",
       "AI 콘텐츠 생성 기능 통합",
-      "키워드 추천 알고리즘 구현",
       "사용자 시나리오 및 페이지 플로우 설계"
     ],
     features: [
-      "AI 기반 키워드 추천",
       "자동 콘텐츠 생성",
       "블로그 콘텐츠 분석",
       "포스팅 일정 관리",
@@ -119,13 +123,15 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "블로그 플래너",
+    title: "블로그플래너",
     description: "블로그 운영을 위한 플래너 서비스",
     fullDescription: "블로그 플래너는 블로그 운영을 위한 플래너 서비스입니다. 블로그를 운영하며 필요한 키워드를 추천하고, 콘텐츠를 분류하여 자신만의 블로그 운영 플랜을 세울 수 있습니다.",
     image: "/images/planner/planner-hero-1.png",
     technologies: ["Next.js", "React", "TypeScript", "Styled-Components", "Tailwind CSS", "PostgreSQL", "Supabase", "GitHub"],
     liveUrl: "https://production-dobby.vercel.app/planner",
     githubUrl: "https://github.com/devDingco/dobby",
+    designUrl: "https://frog-cedar-70306186.figma.site/",
+    erdUrl: "https://dbdiagram.io/d/blog-663cbc7d9e85a46d5569b9ae",
     period: "2025.09 - 2025.10 (1개월) 개발중",
     role: "풀스택 개발자, 기획, 디자인",
     projectType: "B2C",
@@ -138,7 +144,6 @@ export const projects: Project[] = [
     ],
     features: [
       "블로그 포스팅 계획 수립",
-      "키워드 추천 및 관리",
       "콘텐츠 카테고리 분류",
       "완료 컨탠츠 관리",
       "작성 진행률 추적",
@@ -147,30 +152,38 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    title: "바꿀래 - 스킬트레이딩 커뮤니티 플랫폼",
-    description: "재능과 취미를 기술로 교환하는 커뮤니티",
-    fullDescription: "재능과 취미를 금전이 아닌 기술로 교환하는 커뮤니티 플랫폼입니다. 사용자는 자신이 가진 능력과 필요한 능력을 등록하여 교환 상대를 찾을 수 있으며, React·Next.js 기반 UI와 NestJS·Supabase 기반 REST API로 실시간 매칭 및 게시글 관리 기능을 제공합니다.",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    technologies: ["React", "Next.js", "TypeScript", "Styled-Components", "Tailwind CSS", "PostgreSQL", "Supabase", "Nest.JS", "GitHub"],
-    liveUrl: "https://www.bakkullae.com/",
-    githubUrl: "https://github.com/bakkullae",
+    title: "Plan-A",
+    description: "불평등한 결혼정보, 아는사람만 합리적인 결혼은 사라져야한다라는 생각으로 시작한 나만에 AI웨딩플래너 프로젝트입니다.",
+    fullDescription: "사용자로부터 이름과 연락처 결혼예정일, 선호 지역 총 예산 정보를 입력받아, 웨딩 플래너 추천 서비스를 제공합니다.",
+    image: "/images/plan-a/plan-a-hero-1.png",
+    technologies: ["React", "TypeScript", "Nativewind", "Style-Sheet", "PostgreSQL", "Nest.JS","TYPEORM", "OPENAI", "GitHub", "Figma", "DBDiagram"],
+    liveUrl: "https://view-glory-27028433.figma.site/",
+    githubUrl: "https://github.com/dacon-winner/planA",
+    designUrl: "https://view-glory-27028433.figma.site/",
+    erdUrl: "https://dbdiagram.io/d/Plan_A-692578457d9416ddffff4073",
     period: "2025.11 - 2025.11 (1개월) 개발중",
     role: "풀스택 개발자, 기획, 디자인",
-    projectType: "Community Site(개인프로젝트)",
+    projectType: "해커톤",
     responsibilities: [
-      "React/Next.js 기반 프론트엔드 개발",
-      "NestJS 백엔드 API 설계 및 구현",
-      "실시간 매칭 알고리즘 개발",
-      "게시글 및 사용자 관리 시스템 구축",
-      "Supabase를 활용한 데이터베이스 관리"
+      "Figma를 활용한 서비스 UX/UI 프로토타입 설계",
+      "ReactNative Expo 기반 앱 초기 구조 설계",
+      "Nest.JS 기반 백엔드 API 개발",
+      "TypeORM을 활용한 데이터베이스 설계",
+      "PostgreSQL을 활용한 데이터베이스 설계",
+      "DBDiagram을 활용한 ERD 설계",
+      "OPENAI를 활용한 웨딩 플래너 추천 기능 개발",
+      "사용자 시나리오 및 페이지 플로우 설계",
+      "사용자 API 구현",
+      "사용자 인증 구현",
     ],
     features: [
-      "재능 교환 게시글 작성",
-      "스킬 매칭 시스템",
-      "실시간 채팅 기능",
-      "사용자 프로필 관리",
-      "리뷰 및 평가 시스템",
-      "커뮤니티 게시판"
+      "사용자 맞춤 웨딩 플래너 추천",
+      "웨딩 플래너 추천 기능",
+      "지도 기반 업체 탐색",
+      "웨딩업체 정보 제공",
+      "웨딩업체 예산 계산",
+      "웨딩업체 리뷰 및 평가",
+      "웨딩업체 예약 기능",
     ]
   }
 ];

@@ -12,7 +12,7 @@ interface DockProps {
 
 // projects.ts의 데이터를 Dock용으로 변환
 const projects = projectsData.map((project, index) => {
-  const icons = ["💌", "🏯", "🤖", "📝", "🔄"];
+  const icons = ["💌", "🏯", "🤖", "📝", "💍"];
   const gradients = [
     "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",

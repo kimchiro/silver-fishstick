@@ -35,9 +35,9 @@ export const projects: Project[] = [
       { name: "Database", duration: 43, color: "#3B82F6" }
     ],
     milestones: [
-      { day: 40, label: "JS 완료" },
-      { day: 80, label: "Node 완료" },
-      { day: 123, label: "수료" }
+      // { day: 40, label: "JS 완료" },
+      // { day: 80, label: "Node 완료" },
+      // { day: 123, label: "수료" }
     ]
   },
   {
@@ -56,10 +56,10 @@ export const projects: Project[] = [
       { name: "운영/개선", duration: 129, color: "#06B6D4" }
     ],
     milestones: [
-      { day: 60, label: "설계 완료" },
-      { day: 210, label: "프론트 완료" },
-      { day: 360, label: "백엔드 완료" },
-      { day: 489, label: "서비스 안정화" }
+      // { day: 60, label: "설계 완료" },
+      // { day: 210, label: "프론트 완료" },
+      // { day: 360, label: "백엔드 완료" },
+      // { day: 489, label: "서비스 안정화" }
     ]
   },
   {
@@ -77,9 +77,9 @@ export const projects: Project[] = [
       { name: "실전 프로젝트", duration: 62, color: "#10B981" }
     ],
     milestones: [
-      { day: 60, label: "React 완료" },
-      { day: 120, label: "Redux 완료" },
-      { day: 182, label: "수료" }
+      // { day: 60, label: "React 완료" },
+      // { day: 120, label: "Redux 완료" },
+      // { day: 182, label: "수료" }
     ]
   },
   {
@@ -97,9 +97,9 @@ export const projects: Project[] = [
       { name: "배포", duration: 22, color: "#10B981" }
     ],
     milestones: [
-      { day: 20, label: "기획 완료" },
-      { day: 70, label: "개발 완료" },
-      { day: 92, label: "런칭" }
+      // { day: 20, label: "기획 완료" },
+      // { day: 70, label: "개발 완료" },
+      // { day: 92, label: "런칭" }
     ]
   },
   {
@@ -117,9 +117,9 @@ export const projects: Project[] = [
       { name: "프로토타입", duration: 53, color: "#A259FF" }
     ],
     milestones: [
-      { day: 50, label: "Figma 완료" },
-      { day: 100, label: "UI 완료" },
-      { day: 153, label: "수료" }
+      // { day: 50, label: "Figma 완료" },
+      // { day: 100, label: "UI 완료" },
+      // { day: 153, label: "수료" }
     ]
   },
   {
@@ -137,9 +137,9 @@ export const projects: Project[] = [
       { name: "포트폴리오", duration: 30, color: "#8B5CF6" }
     ],
     milestones: [
-      { day: 30, label: "리서치 완료" },
-      { day: 62, label: "UI 완료" },
-      { day: 92, label: "수료" }
+      // { day: 30, label: "리서치 완료" },
+      // { day: 62, label: "UI 완료" },
+      // { day: 92, label: "수료" }
     ]
   },
   {
@@ -157,9 +157,6 @@ export const projects: Project[] = [
       { name: "프로젝트", duration: 40, color: "#10B981" }
     ],
     milestones: [
-      { day: 40, label: "AI 완료" },
-      { day: 82, label: "코딩 완료" },
-      { day: 122, label: "수료" }
     ]
   },
   {
@@ -177,9 +174,9 @@ export const projects: Project[] = [
       { name: "테스트", duration: 11, color: "#10B981" }
     ],
     milestones: [
-      { day: 20, label: "기획 완료" },
-      { day: 50, label: "개발 완료" },
-      { day: 61, label: "런칭" }
+      // { day: 20, label: "기획 완료" },
+      // { day: 50, label: "개발 완료" },
+      // { day: 61, label: "런칭" }
     ]
   },
   {
@@ -197,29 +194,29 @@ export const projects: Project[] = [
       { name: "AI 연동", duration: 16, color: "#10B981" }
     ],
     milestones: [
-      { day: 20, label: "설계 완료" },
-      { day: 45, label: "개발 완료" },
-      { day: 61, label: "서비스 중" }
+      // { day: 20, label: "설계 완료" },
+      // { day: 45, label: "개발 완료" },
+      // { day: 61, label: "서비스 중" }
     ]
   },
   {
     id: 10,
-    name: "바꿀래 스킬트레이딩",
+    name: "Plan-A",
     type: "project",
     startDate: "2025.11",
-    endDate: "2025.11",
+    endDate: "2025.12",
     startDay: 853, // 2023년(184) + 2024년(366) + 2025년 1~10월(303) ≈ 853
-    totalDays: 30, // 11월 = 30일
-    role: "풀스택 개발자",
+    totalDays: 92, // 11월 = 30일
+    role: "풀스택 개발자, 기획, 디자인",
     phases: [
       { name: "기획/디자인", duration: 10, color: "#8B5CF6" },
       { name: "개발", duration: 15, color: "#3B82F6" },
       { name: "배포", duration: 5, color: "#10B981" }
     ],
     milestones: [
-      { day: 10, label: "기획" },
-      { day: 25, label: "개발" },
-      { day: 30, label: "런칭" }
+      // { day: 10, label: "기획" },
+      // { day: 25, label: "개발" },
+      // { day: 30, label: "런칭" }
     ]
   },
   {
@@ -237,27 +234,11 @@ export const projects: Project[] = [
       { name: "배포", duration: 6, color: "#10B981" }
     ],
     milestones: [
-      { day: 10, label: "디자인 완료" },
-      { day: 25, label: "개발 완료" },
-      { day: 31, label: "런칭" }
+      // { day: 10, label: "디자인 완료" },
+      // { day: 25, label: "개발 완료" },
+      // { day: 31, label: "런칭" }
     ]
   },
-  {
-    id: 12,
-    name: "미래 프로젝트",
-    type: "project",
-    startDate: "2025.12",
-    endDate: "2025.12",
-    startDay: 884,
-    totalDays: 30,
-    role: "개발자",
-    phases: [
-      { name: "계획 중", duration: 30, color: "#9CA3AF" }
-    ],
-    milestones: [
-      { day: 30, label: "계획 중" }
-    ]
-  }
 ];
 
 export const TOTAL_DAYS = 884; // 2023.07 ~ 2025.11 (약 2년 5개월)

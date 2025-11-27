@@ -58,7 +58,7 @@ export default function Home() {
             className="mb-8"
           >
             <h1 className="text-6xl mb-6 drop-shadow-lg">안녕하세요 👋</h1>
-            <h2 className="text-4xl mb-6 drop-shadow-lg">웹 개발자 포트폴리오</h2>
+            <h2 className="text-4xl mb-6 drop-shadow-lg">웹/앱 개발자 김동언의 포트폴리오 입니다.</h2>
           </motion.div>
           
           <motion.div
@@ -68,13 +68,16 @@ export default function Home() {
             className="max-w-2xl mx-auto space-y-4 text-xl drop-shadow-lg"
           >
             <p>
-              사용자 경험을 최우선으로 생각하는 풀스택 개발자입니다.
+              사용자 경험을 최우선으로 생각하는 풀스택 개발자 김동언입니다.
             </p>
             <p>
-              React, TypeScript, Node.js를 활용하여
+              React,React Native TypeScript, Next.js, Node.js, Nest.js 를 활용하여
             </p>
             <p>
-              혁신적이고 확장 가능한 웹 애플리케이션을 만듭니다.
+              실제 사용자들이 겪는 문제를 기술로 해결하고,
+            </p>
+            <p>
+              더 나은 경험을 제공하는 서비스를 만드는 개발자입니다.
             </p>
           </motion.div>
 
